@@ -34,15 +34,15 @@ def btnClick(button): #poda klikšķinās
 
 
 #POGU IZVEIDE, PIEVIENOŠANA (LAUKUMU VEIDO KĀ POGAS)
-btn1=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn1)) #pogas izmērs, teksta fonts un strādāšana
-btn2=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn2))
-btn3=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn3))
-btn4=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn4))
-btn5=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn5))
-btn6=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn6))
-btn7=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn7))
-btn8=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn8))
-btn9=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn9))
+btn1=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn1),bg="whitesmoke") #pogas izmērs, teksta fonts un strādāšana
+btn2=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn2),bg="lightblue")
+btn3=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn3),bg="whitesmoke")
+btn4=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn4),bg="lightblue")
+btn5=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn5),bg="whitesmoke")
+btn6=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn6),bg="lightblue")
+btn7=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn7),bg="whitesmoke")
+btn8=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn8),bg="lightblue")
+btn9=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn9),bg="whitesmoke")
 
 
 #GALVENĀ IZVĒLNE
@@ -53,12 +53,6 @@ mansLogs.config(menu=galvenaIzvelne) #pievieno galvenajam logam
 #MAZĀ IZVĒLNE
 opcijas=Menu(galvenaIzvelne,tearoff=False)#mazā izvelne
 galvenaIzvelne.add_cascade(label="Opcijas",menu=opcijas) #lejupkrītošais saraksts
-
-
-#MAZĀS IZVĒLNES KOMANDAS 
-opcijas.add_command(label="Jauna spēle", command=reset)#jaunas speles sākšanas poga
-opcijas.add_command(label="Iziet",cmmand=mansLogs.quit) #aiztaisa logu, speli
-
 
 
 #POGU PIEVIENOŠANA, NOVIETOJUMS
@@ -108,6 +102,11 @@ def reset():
      btn9["text"]=""
 
 
+#MAZĀS IZVĒLNES KOMANDAS 
+opcijas.add_command(label="Jauna spēle", command=reset)#jaunas speles sākšanas poga
+opcijas.add_command(label="Iziet",command=mansLogs.quit) #aiztaisa logu, speli
+
+
 #UZVARĒTĀJA FUNKCIJA
 def checkWinner():
     global checkWinner
@@ -137,7 +136,7 @@ def checkWinner():
     elif count==9 and winner==False:
          disableButtons()
          messagebox.showinfo("Tic-Tac-Toe","Spēle beidzās ar neizšķirtu!")
-         return
+    return
 
 
 mansLogs.mainloop()
