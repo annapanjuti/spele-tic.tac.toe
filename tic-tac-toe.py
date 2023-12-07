@@ -10,15 +10,15 @@ mansLogs.title("TicTacToe")
 
 
 #POGU IZVEIDE, PIEVIENOŠANA (LAUKUMU VEIDO KĀ POGAS)
-btn1=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn1),bg="whitesmoke") #pogas izmērs, teksta fonts un strādāšana
-btn2=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn2),bg="lightblue")
-btn3=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn3),bg="whitesmoke")
-btn4=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn4),bg="lightblue")
-btn5=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn5),bg="whitesmoke")
-btn6=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn6),bg="lightblue")
-btn7=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn7),bg="whitesmoke")
-btn8=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn8),bg="lightblue")
-btn9=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24),command=lambda:btnClick(btn9),bg="whitesmoke") #kopā 9 spēļu lauciņi
+btn1=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24,"bold"),command=lambda:btnClick(btn1),bg="whitesmoke", bd=10) #pogas izmērs, teksta fonts un strādāšana
+btn2=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24,"bold"),command=lambda:btnClick(btn2),bg="lightblue", bd=10)
+btn3=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24,"bold"),command=lambda:btnClick(btn3),bg="whitesmoke", bd=10)
+btn4=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24,"bold"),command=lambda:btnClick(btn4),bg="lightblue", bd=10)
+btn5=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24,"bold"),command=lambda:btnClick(btn5),bg="whitesmoke", bd=10)
+btn6=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24,"bold"),command=lambda:btnClick(btn6),bg="lightblue", bd=10)
+btn7=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24,"bold"),command=lambda:btnClick(btn7),bg="whitesmoke", bd=10)
+btn8=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24,"bold"),command=lambda:btnClick(btn8),bg="lightblue", bd=10)
+btn9=Button(mansLogs,text="",width=6,height=3,font=("Helvica",24,"bold"),command=lambda:btnClick(btn9),bg="whitesmoke", bd=10) #kopā 9 spēļu lauciņi
 
 
 #POGU PIEVIENOŠANA, NOVIETOJUMS
@@ -130,34 +130,25 @@ def btnClick(button): #poga klikšķinās
     return
 
 
+#PAPILDUS LOGA FUNKCIJA
 def infoLogs():
     jaunsLogs=Toplevel()
     jaunsLogs.title("Informācija par programmu")
-    jaunsLogs.geometry("1250x255")
-    virsraksts=Label(jaunsLogs,text="Spēles noteikumi",font=("Verdana",20,"bold"))
+    jaunsLogs.geometry("1250x170")
+    virsraksts=Label(jaunsLogs,text="Spēles noteikumi",font=("Verdana",20,"bold"), bg="lightblue")
     virsraksts.grid(row=0,column=0)
-    apraksts1=Label(jaunsLogs,text="1. Spēlē piedalās divi spēlētāji;",font=("Verdana",12),padx=0)
+    apraksts1=Label(jaunsLogs,text="1. Spēlē piedalās divi spēlētāji - X un O;",font=("Verdana",12),padx=0)
     apraksts1.grid(row=1,column=0)
-    apraksts2=Label(jaunsLogs,text="2. Spēles sākumā viens spēlētājs izvēlas X zīmi, bet otrs spēlētājs izvēlas O zīmi;",font=("Verdana",12))
+    apraksts2=Label(jaunsLogs,text="2. Spēlētāji pēc kārtas liek savas zīmes TIKAI uz tukšiem, neaizpildītiem lauciņiem;",font=("Verdana",12))
     apraksts2.grid(row=2,column=0)
-    apraksts3=Label(jaunsLogs,text="3. Spēlētāji pēc kārtas liek savas zīmes uz tukšiem lauciņiem;",font=("Verdana",12))
+    apraksts3=Label(jaunsLogs,text="3. Spēle turpinās, līdz vienam no spēlētājiem izdodas iegūt trīs savas zīmes (X vai O) rindā, kolonnā vai diagonālē;",font=("Verdana",12))
     apraksts3.grid(row=3,column=0)
-    apraksts4=Label(jaunsLogs,text="4. Spēlētājs var likt savu zīmi tikai uz tukša lauciņa;",font=("Verdana",12))
+    apraksts4=Label(jaunsLogs,text="4. Ja laukums tiek pilnībā aizpildīts, un nevienam spēlētājam neizdodas iegūt trīs zīmes rindā, kolonnā vai diagonālē, tad spēle beidzas ar neizšķirtu;",font=("Verdana",12))
     apraksts4.grid(row=4,column=0)
-    apraksts5=Label(jaunsLogs,text="5. Spēlētāji liek savas zīmes pēc kārtas",font=("Verdana",12))
+    apraksts5=Label(jaunsLogs,text="5. Spēli var spēlēt vairākas reizes, mainot spēlētāju, kas sāk spēli.",font=("Verdana",12))
     apraksts5.grid(row=5,column=0)
-    apraksts6=Label(jaunsLogs,text="6. Spēle turpinās, līdz vienam no spēlētājiem izdodas iegūt trīs savas zīmes rindā, kolonnā;",font=("Verdana",12))
-    apraksts6.grid(row=6,column=0)
-    apraksts7=Label(jaunsLogs,text="7. Ja laukums tiek pilnībā aizpildīts, un nevienam spēlētājam neizdodas iegūt trīs zīmes rindā, kolonnā vai diagonālē, tad spēle beidzas ar neizšķirtu;",font=("Verdana",12))
-    apraksts7.grid(row=7,column=0)
-    apraksts8=Label(jaunsLogs,text="8. Spēlētāji nevar mainīt savu gājienu, un nevar likt savu zīmi uz jau aizpildītas rūtiņas;",font=("Verdana",12))
-    apraksts8.grid(row=8,column=0)
-    apraksts9=Label(jaunsLogs,text="9. Spēli var spēlēt vairākas reizes, mainot spēlētāju, kas sāk spēli.",font=("Verdana",12))
-    apraksts9.grid(row=9,column=0)
     return 0
 
-#infoLogs()
-#jaunsLogs.create_text(300,50,text="Hello world!")
 
 #GALVENĀ IZVĒLNE
 galvenaIzvelne=Menu(mansLogs) #izveido galveno izvēlni
